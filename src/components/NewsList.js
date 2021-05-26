@@ -4,7 +4,7 @@ import { newsContext } from '../context/context'
 export default function NewsList({tittle}) {
 
     const {handleContent}=useContext(newsContext)
-    const title=tittle.title.replace("- "+tittle.source.name,"")
+    
     
     
     
@@ -14,7 +14,7 @@ export default function NewsList({tittle}) {
 
            <article id="tittleAndImage">
 
-               <h2>{title}</h2>
+               <h2>{tittle.title}</h2>
                
                <p>{tittle.description}</p>
                 
@@ -23,7 +23,7 @@ export default function NewsList({tittle}) {
 
                 
            </article>
-           {tittle.urlToImage?<img  src={tittle.urlToImage} alt=""></img>:null}
+           {tittle.image?<img  src={tittle.image} alt=""></img>:null}
             
             
         </div>

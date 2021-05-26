@@ -26,7 +26,8 @@ return (
     
       <div id="mainContainer">
         {error?<p id="errorMsj">{error.msj}</p>:null}
-
+        
+       
         <newsContext.Provider value={handlers}>
             <h1>Rolo News Display</h1>
             {content?<News content={content}/>:articles.map(tittle=><NewsList key={tittle.url}  tittle={tittle}/>)}

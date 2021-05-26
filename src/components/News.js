@@ -22,7 +22,7 @@ export default function News({content}) {
             
             <div id="exitNews" onClick={handleExit}/>
 
-            <h3>Author: {content.author}</h3>
+        
             <p>{newsContent}</p>
             <a href={content.url}>Go to the Page</a>
          
