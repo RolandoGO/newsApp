@@ -19,8 +19,23 @@ function App() {
     
   }, [])
   
-  const handlers = handleHook(setContent)
   
+  let display;
+
+  if (content){
+    display=(
+      <>
+      <News content={content}/>
+    </>
+    )
+  }
+  else{
+    display=(articles.map(tittle=><NewsList key={tittle.url}  tittle={tittle}/>))
+
+    
+  }
+  
+  const handlers = handleHook(setContent)
 return (
 
     
@@ -30,7 +45,7 @@ return (
        
         <newsContext.Provider value={handlers}>
             <h1>Rolo News Display</h1>
-            {content?<News content={content}/>:articles.map(tittle=><NewsList key={tittle.url}  tittle={tittle}/>)}
+            {display}
                     
         </newsContext.Provider>
       </div>
